@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en-PH"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Mines Game Online – Free Play, Virtual Chips | DemoLang</title><meta name="description" content="Play a free Mines game online with virtual chips: 5x5 grid, choose 1 to 24 mines, cash out any time. See the real odds of every pick. Walang totoong pera, walang login."><link rel="canonical" href="https://senvarseo-afk.github.io/demolang/games/mines/"><meta name="robots" content="noindex, follow"><meta name="theme-color" content="#0B1220"><meta property="og:type" content="website"><meta property="og:site_name" content="DemoLang"><meta property="og:title" content="Mines Game Online – Free Play, Virtual Chips | DemoLang"><meta property="og:description" content="Play a free Mines game online with virtual chips: 5x5 grid, choose 1 to 24 mines, cash out any time. See the real odds of every pick. Walang totoong pera, walang login."><meta property="og:url" content="https://senvarseo-afk.github.io/demolang/games/mines/"><link rel="icon" href="/demolang/favicon.svg" type="image/svg+xml"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://senvarseo-afk.github.io/demolang/#org","name":"DemoLang","url":"https://senvarseo-afk.github.io/demolang/","description":"Free slot demo site for the Philippines. No real money, no deposits, no operator links."},{"@type":"WebSite","@id":"https://senvarseo-afk.github.io/demolang/#site","name":"DemoLang","url":"https://senvarseo-afk.github.io/demolang/","publisher":{"@id":"https://senvarseo-afk.github.io/demolang/#org"},"inLanguage":"en-PH"},{"@type":"WebPage","@id":"https://senvarseo-afk.github.io/demolang/games/mines/#page","url":"https://senvarseo-afk.github.io/demolang/games/mines/","name":"Mines Game Online – Free Play, Virtual Chips | DemoLang","description":"Play a free Mines game online with virtual chips: 5x5 grid, choose 1 to 24 mines, cash out any time. See the real odds of every pick. Walang totoong pera, walang login.","isPartOf":{"@id":"https://senvarseo-afk.github.io/demolang/#site"},"inLanguage":"en-PH"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://senvarseo-afk.github.io/demolang/"},{"@type":"ListItem","position":2,"name":"Games","item":"https://senvarseo-afk.github.io/demolang/games/"},{"@type":"ListItem","position":3,"name":"Mines","item":"https://senvarseo-afk.github.io/demolang/games/mines/"}]},{"@type":"WebApplication","name":"DemoLang Mines","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"PHP"}}]}</script><!-- Prefetch same-site pages when a link is about to be tapped, so the page transition has the next page ready.
+       Prefetch only (no prerender): pages stay unexecuted until the visitor actually goes there. --><script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/search/*"}}]},"eagerness":"moderate"}]}</script><script>
+    // Shared element for cross-document view transitions: the tapped game tile grows into the game page's player,
+    // and the player shrinks back into its tile on the way back. Names are set only for the moment of the transition
+    // so each name exists once per page. Browsers without these events just change page normally.
+    (function () {
+      var NAME = 'game-art';
+      var slugOf = function (url) { var m = /\/demo\/([^/]+)\/?$/.exec(new URL(url, location.href).pathname); return m ? m[1] : null; };
+      var lastTile = null;
+      document.addEventListener('click', function (e) { var t = e.target.closest && e.target.closest('.tile'); if (t) lastTile = t; }, true);
+      var tileArt = function (slug) {
+        if (lastTile && slugOf(lastTile.href) === slug && document.contains(lastTile)) return lastTile.querySelector('.tile-art');
+        var all = document.querySelectorAll('.tile');
+        for (var i = 0; i < all.length; i++) if (slugOf(all[i].href) === slug) return all[i].querySelector('.tile-art');
+        return null;
+      };
+      var mark = function (el, vt) {
+        if (!el) return;
+        el.style.viewTransitionName = NAME;
+        vt.finished.finally(function () { el.style.viewTransitionName = ''; });
+      };
+      addEventListener('pageswap', function (e) {
+        if (!e.viewTransition || !e.activation || !e.activation.entry) return;
+        var toSlug = slugOf(e.activation.entry.url), here = slugOf(location.href);
+        if (here && !toSlug) mark(document.getElementById('stage'), e.viewTransition);   // game page -> list
+        else if (toSlug && !here) mark(tileArt(toSlug), e.viewTransition);              // list -> game page
+      });
+      addEventListener('pagereveal', function (e) {
+        if (!e.viewTransition || !window.navigation || !navigation.activation || !navigation.activation.from) return;
+        var fromSlug = slugOf(navigation.activation.from.url), here = slugOf(location.href);
+        if (here && !fromSlug) mark(document.getElementById('stage'), e.viewTransition);
+        else if (fromSlug && !here) mark(tileArt(fromSlug), e.viewTransition);
+      });
+    })();
+  </script><link rel="stylesheet" href="/demolang/_astro/demo-vs-real-money.DYVVjgQt.css">
+<style>.mn-table{background:radial-gradient(120% 140% at 50% 0%,#1a2a4e,#111b33 65%);border-color:var(--line-2)}.mn-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;text-align:center;margin-bottom:12px}.mn-status small{display:block;font-size:10.5px;color:var(--muted)}.mn-status strong{font-size:16px;font-variant-numeric:tabular-nums}.mn-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;max-width:420px;margin:0 auto;perspective:600px}.mn-tile{aspect-ratio:1;border-radius:10px;border:0;background:#22345c;box-shadow:inset 0 -4px #172440,inset 0 6px 10px #ffffff14;cursor:pointer;font-size:22px;display:grid;place-items:center;color:#fff;transition:transform .11s ease,background-color .2s ease;padding:0}.mn-tile:not(:disabled):hover{background:#2a4070}.mn-tile:not(:disabled):active{transform:scale(.94)}.mn-tile:disabled{cursor:default}.mn-tile.gem{background:#0f3d35;box-shadow:inset 0 0 0 2px #2dd4bf;animation:mn-flip .26s ease}.mn-tile.boom{background:#5a1620;box-shadow:inset 0 0 0 2px #ff7a7a;animation:mn-shake .34s ease}.mn-tile.shown{opacity:.55;animation:none}@keyframes mn-flip{0%{transform:rotateY(90deg)}to{transform:none}}@keyframes mn-shake{0%,to{transform:none}25%{transform:translate(-4px)}75%{transform:translate(4px)}}#mn-msg{text-align:center;font-weight:800;margin-top:12px;min-height:24px}.mn-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.mn-label{font-size:13px;font-weight:800;color:var(--muted);width:44px}.mn-stepper{display:flex;align-items:center;gap:6px}.mn-stepper .btn{width:44px;height:44px;padding:0;font-size:20px}.mn-stepper output{min-width:34px;text-align:center;font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}.mn-quick{display:flex;gap:6px;flex-wrap:wrap}.mn-quick .chip{height:34px;padding:0 12px}.mn-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.mn-actions .btn:disabled,.mn-stepper .btn:disabled,.mn-quick .chip:disabled{opacity:.4;cursor:not-allowed}#mn-cash:not(:disabled){background:var(--gold);color:#1a1400}.cg-chips{display:flex;gap:8px}.cg-chip{width:46px;height:46px;border-radius:50%;font:inherit;font-weight:800;font-size:13px;cursor:pointer;color:#eaf0ff;background:#1a2642;border:3px dashed #3A4C78}.cg-chip[data-v="50"]{border-color:#2f6fe0}.cg-chip[data-v="100"]{border-color:#22b455}.cg-chip[data-v="500"]{border-color:#ffc72c}.cg-chip[aria-pressed=true]{background:#2dd4bf;color:#062a28;border-style:solid;border-color:#9ff3e6;transform:translateY(-3px)}.cg-chip:disabled{opacity:.35;cursor:not-allowed}.cg-link{background:none;border:0;font:inherit;font-size:13px;font-weight:700;color:var(--link);cursor:pointer;padding:10px 4px;min-height:44px}.cg-link:disabled{opacity:.4;cursor:not-allowed}.cg-link.urge{color:#062a28;background:var(--teal);border-radius:10px;padding:10px 14px}.cg-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;text-align:center}.cg-stats span{display:block;font-size:18px;font-weight:800;font-variant-numeric:tabular-nums}.cg-stats small{font-size:11px;color:var(--muted)}@media(min-width:1024px){.mn-play{position:sticky;top:88px}.mn-info>.section:first-child,.mn-play>.section:first-child{margin-top:32px}}
+</style></head> <body data-tab="color-game"> <header class="site-head"> <div class="wrap bar"> <a class="logo" href="/demolang/" aria-label="DemoLang home"><span class="logo-mark" aria-hidden="true">D</span><span>Demo<b>Lang</b></span></a> <!-- Desktop top nav (總規劃 §1.6). Hidden below 1024px, where the bottom tab bar takes over. --> <nav class="topnav" aria-label="Main"> <a href="/demolang/">Demo Slots</a> <div class="topnav-drop"> <a href="/demolang/provider/" aria-haspopup="true">Providers <span aria-hidden="true">▾</span></a> <div class="topnav-menu"> <a href="/demolang/provider/jili/"><span class="prov-dot" style="background:#3A2A0A;color:#FFC72C" aria-hidden="true">JL</span>JILI</a><a href="/demolang/provider/pg-soft/"><span class="prov-dot" style="background:#13284F;color:#7DB3FF" aria-hidden="true">PG</span>PG Soft</a><a href="/demolang/provider/fa-chai/"><span class="prov-dot" style="background:#3A1428;color:#FF8DBA" aria-hidden="true">FC</span>Fa Chai</a><a href="/demolang/provider/pragmatic-play/"><span class="prov-dot" style="background:#3A1F0E;color:#FFA36B" aria-hidden="true">PP</span>Pragmatic Play</a> </div> </div> <a href="/demolang/games/color-game/" aria-current="page">Color Game</a> <a href="/demolang/guide/">Guides</a> </nav> <form class="top-search" action="/demolang/search/" method="get" role="search"> <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">     <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>   </svg><span class="sr-only">Search games</span> <input name="q" type="search" placeholder="Hanapin ang laro" autocomplete="off"> </label> </form> <div class="head-right"><div class="pill-free" style="background:#10302E;color:var(--mint);border:1px solid #1B4A46"><span id="mn-balance">1,000</span> chips</div></div> </div>  </header> <main class="wrap"> <nav class="crumbs" aria-label="Breadcrumb"> <a href="/demolang/">Home</a> › <a href="/demolang/games/">Games</a> › <span>Mines</span> </nav>   <h1 style="font-size:24px">Mines Game Online</h1> <p style="font-size:13px;color:var(--muted)">Libreng Mines · virtual chips lang, walang totoong pera</p> <div class="split"> <div class="mn-play"> <section class="section card card-pad mn-table" aria-label="Mines board"> <div class="mn-status"> <div><small>Susunod na tile</small><strong id="mn-next">—</strong></div> <div><small>Ligtas na tsansa</small><strong id="mn-odds">—</strong></div> <div><small>Cash out ngayon</small><strong id="mn-win">—</strong></div> </div> <div class="mn-grid" id="mn-grid" role="grid" aria-label="5 by 5 tiles"> <button class="mn-tile" data-i="0" aria-label="Tile 1" disabled></button><button class="mn-tile" data-i="1" aria-label="Tile 2" disabled></button><button class="mn-tile" data-i="2" aria-label="Tile 3" disabled></button><button class="mn-tile" data-i="3" aria-label="Tile 4" disabled></button><button class="mn-tile" data-i="4" aria-label="Tile 5" disabled></button><button class="mn-tile" data-i="5" aria-label="Tile 6" disabled></button><button class="mn-tile" data-i="6" aria-label="Tile 7" disabled></button><button class="mn-tile" data-i="7" aria-label="Tile 8" disabled></button><button class="mn-tile" data-i="8" aria-label="Tile 9" disabled></button><button class="mn-tile" data-i="9" aria-label="Tile 10" disabled></button><button class="mn-tile" data-i="10" aria-label="Tile 11" disabled></button><button class="mn-tile" data-i="11" aria-label="Tile 12" disabled></button><button class="mn-tile" data-i="12" aria-label="Tile 13" disabled></button><button class="mn-tile" data-i="13" aria-label="Tile 14" disabled></button><button class="mn-tile" data-i="14" aria-label="Tile 15" disabled></button><button class="mn-tile" data-i="15" aria-label="Tile 16" disabled></button><button class="mn-tile" data-i="16" aria-label="Tile 17" disabled></button><button class="mn-tile" data-i="17" aria-label="Tile 18" disabled></button><button class="mn-tile" data-i="18" aria-label="Tile 19" disabled></button><button class="mn-tile" data-i="19" aria-label="Tile 20" disabled></button><button class="mn-tile" data-i="20" aria-label="Tile 21" disabled></button><button class="mn-tile" data-i="21" aria-label="Tile 22" disabled></button><button class="mn-tile" data-i="22" aria-label="Tile 23" disabled></button><button class="mn-tile" data-i="23" aria-label="Tile 24" disabled></button><button class="mn-tile" data-i="24" aria-label="Tile 25" disabled></button> </div> <p id="mn-msg" aria-live="polite">Pumili ng taya at ilang mines, tapos Start.</p> </section> <section class="section" aria-label="Bet and mines"> <div class="mn-row"> <span class="mn-label">Taya</span> <div class="cg-chips" role="group" aria-label="Bet"> <button class="cg-chip mn-bet" data-v="10" aria-pressed="true">10</button><button class="cg-chip mn-bet" data-v="50" aria-pressed="false">50</button><button class="cg-chip mn-bet" data-v="100" aria-pressed="false">100</button><button class="cg-chip mn-bet" data-v="500" aria-pressed="false">500</button> </div> </div> <div class="mn-row" style="margin-top:12px"> <span class="mn-label">Mines</span> <div class="mn-stepper"> <button class="btn btn-ghost" id="mn-minus" aria-label="Fewer mines">−</button> <output id="mn-count" aria-live="polite">3</output> <button class="btn btn-ghost" id="mn-plus" aria-label="More mines">+</button> </div> <div class="mn-quick" role="group" aria-label="Quick mine count"> <button class="chip mn-q" data-m="1">1</button><button class="chip mn-q" data-m="3">3</button><button class="chip mn-q" data-m="5">5</button><button class="chip mn-q" data-m="10">10</button><button class="chip mn-q" data-m="24">24</button> </div> </div> <div class="mn-actions"> <button class="btn btn-teal" id="mn-start">Start</button> <button class="btn" id="mn-cash" disabled>Cash out</button> </div> <div style="display:flex;justify-content:space-between;margin-top:6px"> <button class="cg-link" id="mn-random" disabled>Random tile</button> <button class="cg-link" id="mn-reset">Reset to 1,000 chips</button> </div> </section> <section class="section card card-pad" aria-label="Your session"> <div class="cg-stats"> <div><span id="mn-s-rounds">0</span><small>Rounds</small></div> <div><span id="mn-s-staked">0</span><small>Tinaya</small></div> <div><span id="mn-s-back">0</span><small>Bumalik</small></div> <div><span id="mn-s-rtp">—</span><small>Return mo</small></div> </div> <p style="font-size:12px;color:var(--muted);margin-top:10px">Ang inaasahang return sa katagalan ay <strong style="color:var(--text-2)">97%</strong>, kahit ilang mines o ilang tile ang piliin mo.</p> </section> </div> <div class="mn-info"> <section class="section"> <h2 style="margin-bottom:10px">Paano laruin ang Mines</h2> <div class="card card-pad prose game-copy"> <ol> <li>Pumili ng taya at kung ilang mines (1 hanggang 24) ang itatago sa 25 na tile.</li> <li>I-tap ang <strong>Start</strong>. Nakatago na ang mines bago ka pumili; hindi na sila gumagalaw.</li> <li>Magbukas ng tile. Kung diamond, tataas ang multiplier. Kung mine, talo ang taya.</li> <li>I-tap ang <strong>Cash out</strong> anumang oras para kunin ang taya × multiplier.</li> </ol> <p>Mas maraming mines, mas mataas ang multiplier, pero mas maliit ang tsansang ligtas ang bawat tile.</p> </div> </section> <section class="section"> <h2 style="margin-bottom:10px">Odds at multiplier (3 mines)</h2> <div class="card" style="overflow-x:auto"> <table class="spec"> <thead><tr><th scope="col" style="font-size:11px;font-weight:800">Diamonds na nabuksan</th><th scope="col" style="font-size:11px;font-weight:800;text-align:right">Tsansang umabot</th><th scope="col" style="font-size:11px;font-weight:800;text-align:right">Multiplier</th></tr></thead> <tbody><tr><th scope="row" style="color:var(--text)">1</th><td>88%</td><td>1.10x</td></tr><tr><th scope="row" style="color:var(--text)">2</th><td>77%</td><td>1.26x</td></tr><tr><th scope="row" style="color:var(--text)">3</th><td>67%</td><td>1.45x</td></tr><tr><th scope="row" style="color:var(--text)">5</th><td>50%</td><td>1.96x</td></tr><tr><th scope="row" style="color:var(--text)">8</th><td>30%</td><td>3.28x</td></tr><tr><th scope="row" style="color:var(--text)">10</th><td>20%</td><td>4.90x</td></tr></tbody> </table> <div class="spec-note">Tsansa = C(22, n) ÷ C(25, n). Multiplier = 0.97 ÷ tsansa. Same formula for any number of mines.</div> </div> </section> <section class="section"> <h2 style="margin-bottom:10px">May diskarte ba?</h2> <div class="answer"> <div class="label">Short answer</div> <p>Wala. Tsansa × multiplier ay laging 0.97, kaya kahit ilang mines o kailan ka mag-cash out, 97% ang average na balik. Walang tile na mas ligtas sa iba: random ang puwesto ng mines sa bawat round.</p> </div> <div class="card card-pad prose game-copy" style="margin-top:12px"> <h3>"97% win rate" na strategy?</h3> <p>Videos that promise a 90%+ win rate usually pick 1 mine and cash out after one tile. You do win 96% of rounds that way, but each win pays only 1.01x, and the 4% of losses take the whole bet. Over many rounds you still end at about 97% of what you bet. A high win rate is not the same as making money.</p> <h3>Mines predictor</h3> <p>Apps and Telegram bots that claim to show where the mines are cannot see the game's hidden board. In this game the mines are placed with your browser's secure random generator the moment you tap Start, and nothing on the page can know them before you pick. Read more on why prediction tools do not work: <a href="/demolang/guide/scatter-meter/">scatter meter: legit ba?</a></p> <h3>Martingale (doble pagkatalo)</h3> <p>Doubling the bet after every loss does not change the 97%. It only makes a long losing streak, which will come, empty your chips faster. Try it here with virtual chips and see.</p> </div> </section> <section class="section"> <h2 style="margin-bottom:10px">Iba pang libreng laro</h2> <div class="card" style="overflow:hidden"> <a class="list-link" href="/demolang/games/color-game/">Color Game: perya dice, may tunay na odds</a> <a class="list-link" href="/demolang/guide/rtp-meaning/">RTP meaning: ano ang 97%?</a> </div> </section> </div> </div>  <script>(function(){const RTP = 0.97;
+
+    const KEY = 'demolang-mines';
+    const START = 1000;
+    const S = { balance: START, rounds: 0, staked: 0, returned: 0 };
+    try {
+      const raw = JSON.parse(localStorage.getItem(KEY) || 'null');
+      const ok = (v) => Number.isFinite(v) && v >= 0;
+      if (raw && ok(raw.balance)) ['balance', 'rounds', 'staked', 'returned'].forEach((k) => { if (ok(raw[k])) S[k] = Math.floor(raw[k]); });
+    } catch {}
+    const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch {} };
+
+    const $ = (id) => document.getElementById(id);
+    const tiles = [...document.querySelectorAll('.mn-tile')];
+    const bets = [...document.querySelectorAll('.mn-bet')];
+    const quick = [...document.querySelectorAll('.mn-q')];
+    const fmt = (n) => n.toLocaleString('en-PH');
+    const comb = (n, k) => { let r = 1; for (let i = 0; i < k; i++) r = (r * (n - i)) / (i + 1); return r; };
+    const mult = (m, k) => (k === 0 ? 1 : RTP * comb(25, k) / comb(25 - m, k));
+    const xfmt = (x) => (Math.floor(x * 100) / 100).toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + 'x';
+
+    let bet = 10, mines = 3, playing = false, board = null, opened = 0, stake = 0, counted = false;
+
+    // Uniform random integer below n from the browser's secure generator (rejection sampling, no modulo bias).
+    function randBelow(n) { const a = new Uint32Array(1); const lim = Math.floor(4294967296 / n) * n; do { crypto.getRandomValues(a); } while (a[0] >= lim); return a[0] % n; }
+    function placeMines(m) { const idx = [...Array(25).keys()]; for (let i = 24; i > 0; i--) { const j = randBelow(i + 1); [idx[i], idx[j]] = [idx[j], idx[i]]; } const b = Array(25).fill(false); idx.slice(0, m).forEach((i) => (b[i] = true)); return b; }
+
+    function say(t, tone) { $('mn-msg').textContent = t; $('mn-msg').style.color = tone === 'good' ? '#FFC72C' : tone === 'bad' ? '#FFB4A8' : ''; }
+    const winNow = () => Math.round(stake * mult(mines, opened));
+
+    function render() {
+      $('mn-balance').textContent = fmt(S.balance);
+      $('mn-count').textContent = mines;
+      bets.forEach((b) => { const v = Number(b.dataset.v); b.setAttribute('aria-pressed', String(v === bet)); b.disabled = playing || v > S.balance; });
+      quick.forEach((q) => { q.disabled = playing; q.classList.toggle('on', Number(q.dataset.m) === mines); });
+      $('mn-minus').disabled = playing || mines <= 1;
+      $('mn-plus').disabled = playing || mines >= 24;
+      $('mn-start').disabled = playing || bet > S.balance;
+      $('mn-cash').disabled = !playing || opened === 0;
+      $('mn-cash').textContent = playing && opened ? `Cash out ${fmt(winNow())}` : 'Cash out';
+      $('mn-random').disabled = !playing;
+      $('mn-reset').disabled = playing;
+      $('mn-reset').classList.toggle('urge', !playing && S.balance < 10);
+      const left = 25 - opened, safeLeft = left - mines;
+      $('mn-next').textContent = playing && safeLeft > 0 ? xfmt(mult(mines, opened + 1)) : xfmt(mult(mines, 1));
+      $('mn-odds').textContent = (playing ? (safeLeft / left) * 100 : ((25 - mines) / 25) * 100).toFixed(1) + '%';
+      $('mn-win').textContent = playing && opened ? fmt(winNow()) : '—';
+      $('mn-s-rounds').textContent = fmt(S.rounds);
+      $('mn-s-staked').textContent = fmt(S.staked);
+      $('mn-s-back').textContent = fmt(S.returned);
+      $('mn-s-rtp').textContent = S.staked ? ((S.returned / S.staked) * 100).toFixed(1) + '%' : '—';
+    }
+
+    function endRound(back, text, tone) {
+      playing = false;
+      S.returned += back; S.balance += back; S.rounds += 1; save();
+      tiles.forEach((t, i) => {
+        t.disabled = true;
+        if (!t.classList.contains('gem') && !t.classList.contains('boom')) { t.textContent = board[i] ? '💣' : '💎'; t.classList.add('shown'); }
+      });
+      say(text, tone); render();
+    }
+
+    function open(i) {
+      const t = tiles[i];
+      if (!playing || t.disabled) return;
+      t.disabled = true;
+      if (board[i]) {
+        t.textContent = '💣'; t.classList.add('boom');
+        t.setAttribute('aria-label', `Tile ${i + 1}: mine`);
+        if (navigator.vibrate) navigator.vibrate([40, 30, 40]);
+        endRound(0, `Mine! Talo ang ${fmt(stake)} chips. Demo lang!`, 'bad');
+        return;
+      }
+      opened += 1;
+      t.textContent = '💎'; t.classList.add('gem');
+      t.setAttribute('aria-label', `Tile ${i + 1}: diamond`);
+      if (opened === 25 - mines) return endRound(winNow(), `Lahat ng diamond! +${fmt(winNow() - stake)} chips`, 'good');
+      say(`${opened} diamond · ${xfmt(mult(mines, opened))}. Tuloy o cash out?`);
+      render();
+    }
+
+    tiles.forEach((t) => t.addEventListener('click', () => open(Number(t.dataset.i))));
+    bets.forEach((b) => b.addEventListener('click', () => { bet = Number(b.dataset.v); render(); }));
+    quick.forEach((q) => q.addEventListener('click', () => { mines = Number(q.dataset.m); render(); }));
+    $('mn-minus').addEventListener('click', () => { mines = Math.max(1, mines - 1); render(); });
+    $('mn-plus').addEventListener('click', () => { mines = Math.min(24, mines + 1); render(); });
+    $('mn-start').addEventListener('click', () => {
+      if (playing || bet > S.balance) return;
+      board = placeMines(mines); opened = 0; stake = bet; playing = true;
+      S.balance -= bet; S.staked += bet; save();
+      tiles.forEach((t, i) => { t.disabled = false; t.textContent = ''; t.className = 'mn-tile'; t.setAttribute('aria-label', `Tile ${i + 1}`); });
+      say(`${mines} mine${mines > 1 ? 's' : ''} nakatago. Pumili ng tile.`);
+      render();
+      if (!counted) { counted = true; window.dataLayer?.push({ event: 'demo_start', game: 'mines', provider: 'demolang' }); }
+    });
+    $('mn-cash').addEventListener('click', () => {
+      if (!playing || !opened) return;
+      const back = winNow();
+      endRound(back, `Cash out! +${fmt(back - stake)} chips (${xfmt(mult(mines, opened))})`, 'good');
+      if (navigator.vibrate) navigator.vibrate([30, 40, 30]);
+    });
+    $('mn-random').addEventListener('click', () => {
+      const closed = tiles.filter((t) => !t.disabled);
+      if (closed.length) open(Number(closed[randBelow(closed.length)].dataset.i));
+    });
+    $('mn-reset').addEventListener('click', () => {
+      if (playing) return;
+      Object.assign(S, { balance: START, rounds: 0, staked: 0, returned: 0 }); save();
+      tiles.forEach((t) => { t.textContent = ''; t.className = 'mn-tile'; t.disabled = true; });
+      say('Bagong 1,000 chips. Laro na!'); render();
+    });
+    if (S.balance < 10) say('Ubos na ang chips. I-reset para makalaro ulit.', 'bad');
+    render();
+  })();</script>  </main> <footer class="wrap site-foot"> <div class="foot-cols"> <div class="foot-brand"> <a class="logo" href="/demolang/"><span class="logo-mark" aria-hidden="true">D</span><span>Demo<b>Lang</b></span></a> <p>Libreng slot demos para sa Pilipinas. Demo lang: walang deposit, walang totoong pera.</p> </div> <div><div class="foot-h">Providers</div><a href="/demolang/provider/jili/">JILI</a><a href="/demolang/provider/pg-soft/">PG Soft</a><a href="/demolang/provider/fa-chai/">Fa Chai</a><a href="/demolang/provider/pragmatic-play/">Pragmatic Play</a></div> <div><div class="foot-h">Popular demos</div><a href="/demolang/demo/super-ace/">Super Ace</a><a href="/demolang/demo/pinata-wins/">Pinata Wins</a><a href="/demolang/demo/wild-bounty-showdown/">Wild Bounty Showdown</a><a href="/demolang/demo/sugar-bang-bang/">Sugar Bang Bang</a><a href="/demolang/demo/fortune-gems/">Fortune Gems</a></div> <div><div class="foot-h">Learn</div><a href="/demolang/guide/what-is-scatter/">What is scatter?</a><a href="/demolang/guide/scatter-meter/">Scatter meter: legit ba?</a><a href="/demolang/rules/tongits/">Tongits rules</a><a href="/demolang/rules/pusoy-dos/">Pusoy Dos rules</a><a href="/demolang/rules/lucky-9/">Lucky 9 rules</a><a href="/demolang/games/color-game/">Color Game</a><a href="/demolang/games/mines/">Mines</a></div> </div> <nav aria-label="About DemoLang"> <a href="/demolang/about/">About</a><a href="/demolang/editorial-policy/">Editorial policy</a><a href="/demolang/responsible-gaming/">Responsible gaming</a> <a href="/demolang/disclaimer/">Disclaimer</a><a href="/demolang/privacy/">Privacy</a><a href="/demolang/contact/">Contact</a> </nav> <p>21+ only. DemoLang is a free demo site: virtual credits only, no real money, no deposits and no links to online casinos. Game names belong to their providers; DemoLang is not affiliated with any game provider.</p> </footer> <nav class="tabbar" aria-label="Main"> <a href="/demolang/"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path>       </svg>Home</a><a href="/demolang/provider/"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">  <rect x="4" y="4" width="7" height="7" rx="2"></rect><rect x="13" y="4" width="7" height="7" rx="2"></rect><rect x="4" y="13" width="7" height="7" rx="2"></rect><rect x="13" y="13" width="7" height="7" rx="2"></rect>      </svg>Providers</a><a href="/demolang/games/color-game/" aria-current="page"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">   <rect x="4" y="4" width="16" height="16" rx="3"></rect><circle cx="9" cy="9" r="1"></circle><circle cx="15" cy="15" r="1"></circle><circle cx="15" cy="9" r="1"></circle><circle cx="9" cy="15" r="1"></circle>     </svg>Color Game</a><a href="/demolang/guide/"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">    <path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"></path><path d="M4 19V5"></path>    </svg>Guides</a><a href="/demolang/search/"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">     <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>   </svg>Search</a> </nav> </body></html>
